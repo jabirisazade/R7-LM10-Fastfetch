@@ -1,56 +1,90 @@
-# R7-LM10-Fastfetch
+# ⚡ R7-LM10-Fastfetch
 
-A simple Linux ricing setup featuring **Fastfetch**, **Kitty**, **JetBrainsMono Nerd Font**, and a custom **Ronaldo** Fastfetch logo.
+<div align="center">
 
-Designed for users who want to quickly set up the same terminal and Fastfetch configuration with a single command.
+### A minimal Linux terminal setup for Fastfetch & Kitty
+
+Fastfetch • Kitty • JetBrainsMono Nerd Font • Custom Theme
+
+<br>
+
+![Linux](https://img.shields.io/badge/Linux-000000?style=for-the-badge\&logo=linux\&logoColor=white)
+![Fastfetch](https://img.shields.io/badge/Fastfetch-111111?style=for-the-badge)
+![Kitty](https://img.shields.io/badge/Kitty-111111?style=for-the-badge)
+![Bash](https://img.shields.io/badge/Bash-111111?style=for-the-badge\&logo=gnubash\&logoColor=white)
+
+</div>
+
+---
+
+## 🖥️ Preview
+
+<div align="center">
+
+<!-- Add your screenshot here -->
+
+<img src="preview.png" alt="R7-LM10-Fastfetch Preview" width="850">
+
+</div>
+
+---
 
 ## ✨ Features
 
 * ⚡ Custom Fastfetch configuration
-* 🖼️ Custom Ronaldo Fastfetch logo
-* 🐱 Kitty terminal configuration
+* 🖼️ Custom Ronaldo logo
+* 🐱 Custom Kitty configuration
 * 🎨 Custom Kitty theme
 * 🔤 JetBrainsMono Nerd Font
-* 💾 Automatic backup of existing configurations
-* 🐧 Supports multiple Linux distributions
+* 💾 Automatic configuration backup
+* 🐧 Multi-distro support
 * 🚀 One-command installation
 
-## 🐧 Supported Distributions
+---
 
-* NixOS
-* Arch Linux
-* Manjaro
-* EndeavourOS
-* Garuda Linux
-* ArcoLinux
-* Debian
-* Ubuntu
-* Linux Mint
-* Pop!_OS
-* elementary OS
+## 🚀 One-Command Installation
 
-## 🚀 Installation
-
-Open a terminal and run:
+Install the complete setup with a single command:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/jabirisazade/R7-LM10-Fastfetch/main/install.sh | bash
 ```
 
-The installer automatically:
+The installer automatically detects your Linux distribution and installs the required components.
 
-1. Detects your Linux distribution
-2. Installs the required packages
-3. Installs Fastfetch
-4. Installs Kitty
-5. Installs JetBrainsMono Nerd Font
-6. Downloads the custom Fastfetch configuration
-7. Downloads the Ronaldo logo
-8. Downloads the Kitty configuration
-9. Downloads the Kitty theme
-10. Creates a backup of existing configurations
+### What gets installed?
 
-## 📁 Installed Files
+```text
+Fastfetch
+Kitty
+JetBrainsMono Nerd Font
+Fastfetch configuration
+Ronaldo logo
+Kitty configuration
+Kitty theme
+```
+
+---
+
+## 🐧 Supported Distributions
+
+| Distribution  | Support |
+| ------------- | :-----: |
+| NixOS         |    ✅    |
+| Arch Linux    |    ✅    |
+| Manjaro       |    ✅    |
+| EndeavourOS   |    ✅    |
+| Garuda Linux  |    ✅    |
+| ArcoLinux     |    ✅    |
+| Debian        |    ✅    |
+| Ubuntu        |    ✅    |
+| Linux Mint    |    ✅    |
+| Pop!_OS       |    ✅    |
+| elementary OS |    ✅    |
+
+---
+
+## 📁 Installed Configuration
 
 ### Fastfetch
 
@@ -74,48 +108,86 @@ The installer automatically:
 ~/.local/share/fonts/
 ```
 
-## 💾 Backups
+---
 
-If an existing configuration is detected, the installer automatically creates a backup:
+## 💾 Automatic Backup
+
+The installer protects existing configurations.
+
+If a configuration already exists, it creates a backup automatically:
 
 ```text
 ~/.config/r7-lm10-backup-YYYYMMDD-HHMMSS/
 ```
 
-Your existing configuration is not overwritten without a backup.
+This allows you to safely try the setup without losing your previous configuration.
+
+---
 
 ## ▶️ Usage
 
-After installation, run:
+After installation, start Fastfetch:
 
 ```bash
 fastfetch
 ```
 
-To launch Kitty:
+Launch Kitty:
 
 ```bash
 kitty
 ```
 
-## 🛠️ Manual Configuration
+---
 
-If you only want the configuration files, you can download them directly from this repository.
+## 🛠️ Project Structure
 
 ```text
-fastfetch/config.jsonc
-fastfetch/ronaldooo.png
-kitty/kitty.conf
-kitty/current-theme.conf
+R7-LM10-Fastfetch/
+│
+├── fastfetch/
+│   ├── config.jsonc
+│   └── ronaldooo.png
+│
+├── kitty/
+│   ├── kitty.conf
+│   └── current-theme.conf
+│
+├── install.sh
+│
+└── README.md
 ```
 
-## 📸 Preview
+---
 
-Add a screenshot of the final setup here:
+## 🎨 Customization
 
-```markdown
-![R7-LM10-Fastfetch Preview](preview.png)
+All configuration files are included in the repository, so you can easily modify them for your own setup.
+
+You can change:
+
+* Fastfetch modules
+* Logo
+* Colors
+* Kitty appearance
+* Font settings
+* Terminal behavior
+
+---
+
+## 📸 Screenshot
+
+To add your own preview screenshot, place an image named:
+
+```text
+preview.png
 ```
+
+in the root of the repository.
+
+The README will automatically display it.
+
+---
 
 ## 📜 License
 
@@ -125,5 +197,12 @@ Feel free to modify the configuration and create your own Linux rice.
 
 ---
 
-Made with ❤️ for Linux
-by [Jabir Isazade](https://github.com/jabirisazade)
+<div align="center">
+
+### Made for Linux ❤️
+
+**Jabir Isazade**
+
+[GitHub](https://github.com/jabirisazade)
+
+</div>
