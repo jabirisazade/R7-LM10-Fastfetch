@@ -72,16 +72,17 @@ Kitty theme
 | ------------- | :-----: |
 | NixOS         |    ✅    |
 | Arch Linux    |    ✅    |
+| Cachy OS      |    ✅    |
 | Manjaro       |    ✅    |
 | EndeavourOS   |    ✅    |
 | Garuda Linux  |    ✅    |
-| ArcoLinux     |    ✅    |
+| Kali Linux    |    ✅    |
 | Debian        |    ✅    |
 | Ubuntu        |    ✅    |
 | Linux Mint    |    ✅    |
 | Pop!_OS       |    ✅    |
 | elementary OS |    ✅    |
-
+| ArcoLinux     |    ✅    |
 ---
 
 ## 📁 Installed Configuration
