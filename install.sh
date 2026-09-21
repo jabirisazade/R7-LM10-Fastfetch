@@ -50,7 +50,7 @@ echo
 
 install_arch() {
 
-    echo "[INFO] Arch-based sistem aşkarlanildi."
+    echo "[INFO] Arch-based system identified."
 
     sudo pacman -S --needed --noconfirm \
         bash \
@@ -60,12 +60,12 @@ install_arch() {
         unzip \
         fontconfig
 
-    echo "[OK] Arch paketleri qurasdirildi."
+    echo "[OK] Arch packages installed successfully."
 }
 
 install_debian() {
 
-    echo "[INFO] Debian/Ubuntu-based sistem aşkarlanildi."
+   echo "[INFO] Debian/Ubuntu-based system detected."
 
     sudo apt update
 
@@ -83,15 +83,15 @@ install_debian() {
         sudo apt install -y kitty
     fi
 
-    echo "[OK] Debian/Ubuntu paketleri qurasdirildi."
+   echo "[OK] Debian/Ubuntu packages installed."
 }
 
 install_nixos() {
 
-    echo "[INFO] NixOS aşkarlanildi."
+   echo "[INFO] NixOS detected."
 
     if ! command -v nix >/dev/null 2>&1; then
-        echo "[ERROR] nix komandasi tapilmadi."
+        echo "[ERROR]  nix command not found."
         exit 1
     fi
 
@@ -102,7 +102,7 @@ install_nixos() {
 
     export PATH="$HOME/.nix-profile/bin:$PATH"
 
-    echo "[OK] NixOS paketleri qurasdirildi."
+    echo "[OK] NixOS packages installed."
 }
 
 case "$DISTRO" in
@@ -115,7 +115,7 @@ case "$DISTRO" in
         install_arch
         ;;
 
-    debian|ubuntu|linuxmint|pop|elementary)
+    debian|ubuntu|linuxmint|pop|elementary|kali)
         install_debian
         ;;
 
@@ -135,7 +135,7 @@ case "$DISTRO" in
         echo "  Linux Mint"
         echo "  Pop!_OS"
         echo "  elementary OS"
-        echo
+        echo  " Kali Linux"
         exit 1
         ;;
 esac
@@ -143,7 +143,7 @@ esac
 export PATH="$HOME/.nix-profile/bin:$HOME/.local/bin:$PATH"
 
 echo
-echo "[INFO] Config qovluqlari hazirlanir..."
+echo "[INFO] Preparing configuration directories..."
 
 mkdir -p "$FASTFETCH_DIR"
 mkdir -p "$KITTY_DIR"
@@ -155,8 +155,8 @@ if [ -f "$FASTFETCH_DIR/config.jsonc" ] || \
    [ -f "$KITTY_DIR/current-theme.conf" ]; then
 
     echo
-    echo "[INFO] Mövcud config tapildi."
-    echo "[INFO] Backup yaradilir..."
+  echo "[INFO] Existing configuration found."
+echo "[INFO] Creating backup..."
 
     mkdir -p "$BACKUP_DIR"
 
@@ -176,44 +176,43 @@ if [ -f "$FASTFETCH_DIR/config.jsonc" ] || \
         cp "$KITTY_DIR/current-theme.conf" \
         "$BACKUP_DIR/current-theme.conf"
 
-    echo "[OK] Backup yaradildi:"
+ echo "[OK] Backup created:"
     echo "     $BACKUP_DIR"
 fi
 
 echo
-echo "[INFO] Fastfetch config yuklenir..."
+echo "[INFO] Downloading Fastfetch config..."
 
 curl -fsSL "$FASTFETCH_CONFIG_URL" \
     -o "$FASTFETCH_DIR/config.jsonc"
 
-echo "[OK] Fastfetch config qurasdirildi."
-
+echo "[OK] Fastfetch config installed."
 echo
-echo "[INFO] Fastfetch logosu yuklenir..."
+echo "[INFO] Downloading Fastfetch logo..."
 
 curl -fsSL "$FASTFETCH_LOGO_URL" \
     -o "$FASTFETCH_DIR/ronaldooo.png"
 
-echo "[OK] Fastfetch logosu qurasdirildi."
+echo "[OK] Fastfetch logo installed."
 
 echo
-echo "[INFO] Kitty config yuklenir..."
+echo "[INFO] Downloading Kitty config..."
 
 curl -fsSL "$KITTY_CONFIG_URL" \
     -o "$KITTY_DIR/kitty.conf"
 
-echo "[OK] Kitty config qurasdirildi."
+echo "[OK] Kitty config installed."
 
 echo
-echo "[INFO] Kitty theme yuklenir..."
+echo "[INFO] Downloading Kitty theme..."
 
 curl -fsSL "$KITTY_THEME_URL" \
     -o "$KITTY_DIR/current-theme.conf"
 
-echo "[OK] Kitty theme qurasdirildi."
+echo "[OK] Kitty theme installed."
 
 echo
-echo "[INFO] JetBrainsMono Nerd Font yuklenir..."
+echo "[INFO] Downloading JetBrainsMono Nerd Font..."
 
 FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.tar.xz"
 
@@ -230,15 +229,15 @@ echo "[OK] JetBrainsMono Nerd Font qurasdirildi."
 if command -v fc-cache >/dev/null 2>&1; then
 
     echo
-    echo "[INFO] Font cache yenilenir..."
+    echo "[INFO] Refreshing font cache..."
 
     fc-cache -f "$FONT_DIR"
 
-    echo "[OK] Font cache yenilendi."
+   echo "[OK] Font cache refreshed."
 fi
 
 echo
-echo "[INFO] Final yoxlama..."
+echo "[INFO] Final check..."
 echo
 
 echo "------------------------------------------------------------"
@@ -279,7 +278,7 @@ echo "------------------------------------------------------------"
 
 echo
 echo "============================================================"
-echo "              QURASDIRMA TAMAMLANDI"
+echo "             INSTALLATION COMPLETED"
 echo "============================================================"
 echo
 echo "Fastfetch:"
