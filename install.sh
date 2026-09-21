@@ -45,7 +45,7 @@ echo "        Fastfetch + Kitty + Nerd Font installer"
 echo
 echo "============================================================"
 echo
-echo "Sistem: $PRETTY_NAME"
+echo "System: $PRETTY_NAME"
 echo
 
 install_arch() {
@@ -225,7 +225,7 @@ tar -xf "$TEMP_FONT" -C "$FONT_DIR"
 
 rm -f "$TEMP_FONT"
 
-echo "[OK] JetBrainsMono Nerd Font qurasdirildi."
+echo "[OK] JetBrainsMono Nerd Font installed."
 
 if command -v fc-cache >/dev/null 2>&1; then
 
@@ -291,4 +291,4 @@ echo
 echo "============================================================"
 echo
 
-EOF
+
