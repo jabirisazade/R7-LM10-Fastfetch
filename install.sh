@@ -18,9 +18,9 @@ BACKUP_DIR="$HOME/.config/r7-lm10-backup-$(date +%Y%m%d-%H%M%S)"
 
 if [ "$(id -u)" -eq 0 ]; then
     echo
-    echo "[ERROR] sudo ile calisdirmayin."
+    echo "[ERROR] Do not run with sudo."
     echo
-    echo "Normal user olaraq calisdirin:"
+    echo "Run as a normal user:"
     echo
     echo "curl -fsSL $REPO/install.sh | bash"
     echo
@@ -28,7 +28,7 @@ if [ "$(id -u)" -eq 0 ]; then
 fi
 
 if [ ! -f /etc/os-release ]; then
-    echo "[ERROR] Linux sistemi müəyyən edilmedi."
+   echo "[ERROR] Linux system not detected."
     exit 1
 fi
 
@@ -111,7 +111,7 @@ case "$DISTRO" in
         install_nixos
         ;;
 
-    arch|manjaro|endeavouros|garuda|arcolinux)
+    arch|manjaro|endeavouros|garuda|arcolinux|cachyos)
         install_arch
         ;;
 
@@ -121,9 +121,9 @@ case "$DISTRO" in
 
     *)
         echo
-        echo "[ERROR] Desteklenmeyen Linux sistemi: $DISTRO"
+        echo "[ERROR] Unsupported Linux distribution: $DISTRO"
         echo
-        echo "Desteklenen sistemler:"
+        echo "Supported systems:"
         echo
         echo "  NixOS"
         echo "  Arch Linux"
@@ -135,7 +135,8 @@ case "$DISTRO" in
         echo "  Linux Mint"
         echo "  Pop!_OS"
         echo "  elementary OS"
-        echo  " Kali Linux"
+        echo " Kali Linux"
+        echo "  CachyOS"
         exit 1
         ;;
 esac
